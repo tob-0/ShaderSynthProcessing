@@ -13,6 +13,7 @@ WIP
 
 ## TODO
 
+- add base shader files for quick bootstrap of an event
 - Prevent crash when reloading shader file in case of compilation error
 - add keyboard control for the synth controls
 - polish the mouse wheel scrolling feature
