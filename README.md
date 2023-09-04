@@ -32,3 +32,7 @@ SOON
 - Simplify the movie making
 - Make it so when running the application, you can chose if you want to enable audio reactive visuals or just GLSL shader compilation
 - Explore the webcam options for video
+
+## Next
+
+The project will eventually be migrated away from processing, TBD
