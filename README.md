@@ -5,7 +5,8 @@ Heavily inspired by hydra by @ojack (what a bnager)
 
 
 WIP
-![image](https://github.com/tob-0/ShaderSynthProcessing/assets/46324307/2f445dbd-c793-4f5c-b7dc-42502f911231)
+![image](https://github.com/tob-0/ShaderSynthProcessing/assets/46324307/d47f6d7a-a440-4be3-a1c8-76aeb87d6a8a)
+
 ![image](https://github.com/tob-0/ShaderSynthProcessing/assets/46324307/8b1f2628-3b6f-4f0b-87e0-4126daefd4a4)
 ![image](https://github.com/tob-0/ShaderSynthProcessing/assets/46324307/d7250b49-f196-4030-b6fe-ed0338021302)
 ![image](https://github.com/tob-0/ShaderSynthProcessing/assets/46324307/3fd80084-9d3d-4300-a6d2-c07eb0ea48d6)
