@@ -17,18 +17,18 @@ SOON
 
 ## TODO
 
-- add base shader files for quick bootstrap of an event
+- add base shader files for quick bootstrap of an event (wip)
 - Prevent crash when reloading shader file in case of compilation error
 - add keyboard control for the synth controls
 - polish the mouse wheel scrolling feature
 - quick swap of .glsl files
-- refacto the Shadering.pde file
+- ~~refacto the Shadering.pde file~~ ✔️
 
 ### TODO, someday
 
-- Controls over the color of the output shader
+- Controls over the color of the output shader (somewhat, Generic controls have been added, making it possible0
 - handle the presence and brilliance of the sound
-- refacto the FFT analysis so it does not suck anymore (i hope)
+- ~~refacto the FFT analysis so it does not suck anymore (i hope)~~ ✔️
 - Simplify the movie making
 - Make it so when running the application, you can chose if you want to enable audio reactive visuals or just GLSL shader compilation
 - Explore the webcam options for video
