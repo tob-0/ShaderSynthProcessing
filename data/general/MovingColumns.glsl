@@ -298,11 +298,17 @@ vec2 kaleid(vec2 _st,float nSides){
 
 void main(){
   vec2 st=gl_FragCoord.st/u_resolution;
-  st.x+=u_time;
-  vec4 colorOut=vec4(0.);
   
-  colorOut=noise(modulate(st,osc(rotate(st,6,0),5,.2,.1),.4),u_bassLvl*10,1*u_subLvl);
-  colorOut=color(colorama(colorOut,500*u_midLvl/u_subLvl),1,.2*u_subLvl/u_bassLvl,1,1);
-  //colorOut=add(colorOut,osc(st,20,.2*u_highLvl,5),.5);
-  gl_FragColor=colorOut;
+  vec4 color=vec4(0.);
+  
+  vec2 _st=modulate(st,osc(rotate(st,9.,0.),6,-.1,0.),.5);
+  //_st=modulate(_st,osc(rotate(st,6,0),9,-.3,900),.5*u_bassLvl);
+  vec4 osc00=osc(modulate(st,osc(rotate(_st,15.,0.),2,-.3,100),.5),215*u_generic0,.1,2);
+  osc00=mult(osc00,osc(pixelate(st,500.,0.),215,.1*u_generic0,2.),1.);
+  osc00=color(osc00,.9,0.,.9,1.);
+  osc00=add(osc00,color(osc(_st,10,-.9,900),1*u_subLvl,0.,1,1),1);
+  osc00=mult(osc00,colorama(luma(shape(repeat(_st,20,200,0.,0.),900,.2,1.),.5,.1),10.),1.);
+  osc00=add(osc00,color(osc(st,4,3*u_subLvl,90),.5,0.,1.,1.),1.);
+  vec4 osc01=osc(rotate(st,PI*4*u_subLvl,.2*u_subLvl),20,5*u_midLvl,3*u_subLvl);
+  gl_FragColor=add(osc00,osc01,.7);//vec4(st.x,st.y*u_generic0,1.,1.);
 }

@@ -59,13 +59,23 @@ class Analyzer {
   void setupBoard(int _x, int _y, int _sz) {
     this.board = new Board(_sz, this);
     this.board.place(_x, _y);
-    this.board.addSetting("Sub");
-    this.board.addSetting("Bass");
-    this.board.addSetting("Low");
-    this.board.addSetting("Mid");
-    this.board.addSetting("High");
-    this.board.addSetting("GlobalGain", 1.0, 25.0);
-    
+    this.board.addPotenSetting("Sub");
+    this.board.addPotenSetting("Bass");
+    this.board.addPotenSetting("Low");
+    this.board.addPotenSetting("Mid");
+    this.board.addPotenSetting("High");
+    this.board.addPotenSetting("GlobalGain", 0.5, 1.0, false);
+    this.board.addPotenSetting("BPM", 0.2, 60.0, false);
+    this.board.addPotenSetting("OffsetX", 0.01, 0.0, false);
+    this.board.addPotenSetting("OffsetY", 0.01, 0.0, false);
+    this.board.addPotenSetting("Generic0",false);
+    this.board.addPotenSetting("Generic1",false);
+    this.board.addPotenSetting("Generic2",false);
+    this.board.addPotenSetting("Generic3",false);
+    this.board.addPotenSetting("Generic4",false);
+    this.board.addPotenSetting("Generic5",false);
+    this.board.addPotenSetting("Generic6",false);
+  
   }
   
   float getSubSens() {
@@ -86,9 +96,18 @@ class Analyzer {
   float getOffset() {
     return this.board.getSettingValue("GlobalGain");
   }
+  float getBpm() {
+    return this.board.getSettingValue("BPM");
+  }
+  float getOffsetX() {
+    return this.board.getSettingValue("OffsetX");
+  }
+  float getOffsetY() {
+    return this.board.getSettingValue("OffsetY");
+  }
   
   void update() {
-    
+    if (this.file != null && !this.file.isPlaying()) exit();
     this.fft.analyze(this.spectrum);
     this.subBasses = subset(this.spectrum, 0, 22);
     this.basses = subset(this.spectrum, this.subBasses.length, 93);
@@ -104,6 +123,7 @@ class Analyzer {
     this.update();
     this.board.run();
   }
+  
   float getValueByName(String name) {
     switch (name) {
       case "Sub":
